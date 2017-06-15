@@ -183,6 +183,18 @@
   return [_elementToIndexPathMap countByEnumeratingWithState:state objects:buffer count:len];
 }
 
+- (NSString *)smallDescription
+{
+  NSMutableArray *sectionDescriptions = [NSMutableArray array];
+
+  NSInteger i = 0;
+  for (NSArray *section in _sectionsOfItems) {
+    [sectionDescriptions addObject:[NSString stringWithFormat:@"<S%zd: %zu>", i, section.count]];
+    i++;
+  }
+  return ASObjectDescriptionMakeWithoutObject(@[ @{ @"itemCounts": sectionDescriptions }]);
+}
+
 #pragma mark - ASDescriptionProvider
 
 - (NSString *)description
