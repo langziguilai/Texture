@@ -959,7 +959,6 @@ static ASDisplayNodeMethodOverrides GetASDisplayNodeMethodOverrides(Class c)
   // This is fast enough to do it unconditionally.
   auto key = ASPthreadStaticKey(NULL);
   BOOL isRootCall = (pthread_getspecific(key) == NULL);
-  __unused auto currentActivity = as_activity_get_identifier(AS_ACTIVITY_CURRENT, NULL);
   as_activity_scope_verbose(as_activity_create("Calculate node layout", AS_ACTIVITY_CURRENT, OS_ACTIVITY_FLAG_DEFAULT));
   as_log_verbose(ASLayoutLog(), "Calculating layout for %@ sizeRange %@", self, NSStringFromASSizeRange(constrainedSize));
   if (isRootCall) {
