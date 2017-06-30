@@ -187,9 +187,9 @@
 {
   NSMutableArray *sectionDescriptions = [NSMutableArray array];
 
-  NSInteger i = 0;
+  NSUInteger i = 0;
   for (NSArray *section in _sectionsOfItems) {
-    [sectionDescriptions addObject:[NSString stringWithFormat:@"<S%zd: %zu>", i, section.count]];
+    [sectionDescriptions addObject:[NSString stringWithFormat:@"<S%tu: %tu>", i, section.count]];
     i++;
   }
   return ASObjectDescriptionMakeWithoutObject(@[ @{ @"itemCounts": sectionDescriptions }]);

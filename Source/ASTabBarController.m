@@ -74,7 +74,7 @@ ASVisibilityDepthImplementation;
 - (void)setSelectedIndex:(NSUInteger)selectedIndex
 {
   as_activity_scope(as_activity_create("Set selected index of ASTabBarController", AS_ACTIVITY_CURRENT, OS_ACTIVITY_FLAG_DEFAULT));
-  as_log_info(ASNodeLog(), "Selected tab %zu of %@", selectedIndex, self);
+  as_log_info(ASNodeLog(), "Selected tab %tu of %@", selectedIndex, self);
 
   [super setSelectedIndex:selectedIndex];
   [self visibilityDepthDidChange];
